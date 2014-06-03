@@ -1,0 +1,21 @@
+# git commit
+pull(){
+    git pull origin master
+}
+
+push(){
+    git push origin master
+}
+
+cm() {
+    git commit -m "`echo $1`" -a
+}
+# git add all & commit
+cma() {
+    git add .
+    git commit -m "`echo $1`" -a
+}
+
+s(){
+    git status
+}

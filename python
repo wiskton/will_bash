@@ -1,0 +1,40 @@
+run(){
+    python manage.py runserver "192.168.0.21:${1:-8000}"
+}
+
+r(){
+        python manage.py runserver "192.168.0.21:${1:-8000}"
+}
+
+syncdb(){
+    python manage.py syncdb
+}
+
+# python - migrate
+migrate() {
+    echo "executando... python manage.py migrate"
+    python manage.py migrate $1
+}
+# python - auto
+auto() {
+    echo "executando... python manage.py schemamigration $1 --auto"
+    python manage.py schemamigration $1 --auto
+}
+# python - initial
+initial() {
+    echo "executando... python manage.py schemamigration $1 --initial"
+    python manage.py schemamigration $1 --initial
+}
+
+allow(){
+    echo "ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future $1 $2 $3 $4 $5"
+    ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future $1 $2 $3 $4 $5
+}
+
+createsuperuser(){
+    python manage.py createsuperuser
+}
+
+install(){
+    pip install -r requirements.txt
+}
