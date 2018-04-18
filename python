@@ -38,3 +38,11 @@ createsuperuser(){
 install(){
     pip install -r requirements.txt
 }
+
+lambda(){
+    python-lambda-local -l lib/ -f $0 -t 5 $1 $2event.json
+}
+
+lambdahelp(){
+    echo "function file.py event.json"
+}
