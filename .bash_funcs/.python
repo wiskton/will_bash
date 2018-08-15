@@ -1,9 +1,9 @@
 run(){
-    python manage.py runserver "192.168.0.21:${1:-8000}"
+    python manage.py runserver "0.0.0.0:${1:-8000}"
 }
 
 r(){
-        python manage.py runserver "192.168.0.21:${1:-8000}"
+        python manage.py runserver "0.0.0.0:${1:-8000}"
 }
 
 syncdb(){
@@ -45,4 +45,8 @@ lambda(){
 
 lambdahelp(){
     echo "function file.py event.json"
+}
+
+mkenv(){
+    mkvirtualenv --python=python3 $0
 }

@@ -10,6 +10,7 @@ push(){
 cm() {
     git commit -m "`echo $1`" -a
 }
+
 # git add all & commit
 cma() {
     git add .
