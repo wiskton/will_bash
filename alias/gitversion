@@ -8,13 +8,13 @@ push(){
 }
 
 cm() {
-    git commit -m "`echo $1`" -a
+    git commit -m "$1" -a
 }
 
 # git add all & commit
 cma() {
     git add .
-    git commit -m "`echo $1`" -a
+    git commit -m "$1" -a
 }
 
 s(){
