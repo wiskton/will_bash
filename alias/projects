@@ -1,0 +1,24 @@
+DIR_NAME="projetos";
+DIR_ALIAS=~/.alias
+DIR_CURRENT="${PWD##*/}"
+
+project () {
+    caminho="$HOME/$DIR_NAME/$1";
+    cd "$caminho";
+
+    active="venv/bin/activate"
+    venv="$caminho/$active"
+    source "$venv"
+}
+
+newalias(){
+    echo "alias $DIR_CURRENT() { cd $PWD }" >> $DIR_ALIAS
+}
+
+newenv(){
+    virtualenv venv --python=python3
+    newalias
+}
+
+touch $DIR_ALIAS
+source $DIR_ALIAS

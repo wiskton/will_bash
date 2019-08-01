@@ -1,15 +1,2 @@
 *.pyc
 *.pyo
-*.db
-*.DS_Store
-*.Python
-*._
-bin/*
-include/*
-lib/*
-media/*
-public/*
-shop/*
-logs
-potedjango/*
-pote/local_settings.py
