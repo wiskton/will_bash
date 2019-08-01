@@ -1,14 +1,18 @@
-DIR_NAME="projetos";
+DIR_PROJECTS="projetos";
 DIR_ALIAS=~/.alias
 DIR_CURRENT="${PWD##*/}"
 
 project () {
-    caminho="$HOME/$DIR_NAME/$1";
+    caminho="$HOME/$DIR_PROJECTS/$1";
     cd "$caminho";
 
     active="venv/bin/activate"
     venv="$caminho/$active"
     source "$venv"
+}
+
+projects(){
+    ls ~/$DIR_PROJECTS
 }
 
 newalias(){
