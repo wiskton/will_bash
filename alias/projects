@@ -3,7 +3,7 @@ DIR_ALIAS=~/.alias
 DIR_CURRENT="${PWD##*/}"
 
 project () {
-    caminho="$HOME/$DIR_PROJECTS/$1";
+    caminho=~/$DIR_PROJECTS/$1;
     cd "$caminho";
 
     active="venv/bin/activate"
