@@ -1,4 +1,4 @@
-DIR_PROJECTS="projetos";
+DIR_PROJECTS="projects";
 DIR_ALIAS=~/.alias;
 DIR_CURRENT="${PWD##*/}"
 
