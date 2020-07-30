@@ -1,10 +1,10 @@
 # git commit
 pull(){
-    git pull origin master
+    git pull origin "${1:-master}"
 }
 
 push(){
-    git push origin master
+    git push origin "${1:-master}"
 }
 
 cm() {
