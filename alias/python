@@ -13,7 +13,7 @@ syncdb(){
 # python - migrate
 migrate() {
     echo "executando... python manage.py migrate"
-    python manage.py migrate $1
+    docker-compose run web python manage.py migrate $1
 }
 # python - auto
 auto() {
@@ -24,11 +24,6 @@ auto() {
 initial() {
     echo "executando... python manage.py schemamigration $1 --initial"
     python manage.py schemamigration $1 --initial
-}
-
-allow(){
-    echo "ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future $1 $2 $3 $4 $5"
-    ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future $1 $2 $3 $4 $5
 }
 
 createsuperuser(){
@@ -49,4 +44,8 @@ lambdahelp(){
 
 mkenv(){
     mkvirtualenv --python=python3 $0
+}
+
+makemigrations(){
+	docker-compose run web python manage.py makemigrations
 }
