@@ -9,3 +9,8 @@ Download this project
 add in your .bashrc or .profile
 
     source ~/will_bash/profile
+
+
+copy .gitignore to path your user and update your data
+
+    cp ~/will_bash/.gitignore .
